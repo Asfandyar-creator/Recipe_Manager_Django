@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Django Template</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Template for Django</h1>
+    </header>
+    <main>
+        <h1>This Template is retured by Django server.</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Commodi itaque vel sunt in accusantium consectetur aliquam
+             delectus corrupti accusamus, 
+             possimus, illo animi doloremque modi? Sit 
+             nemo laborum vitae repudiandae veniam?
+        </h2>
+        <hr>
+        {{people}}
+        <hr>
+        <table>
+            <tr>
+              <th>Sr. No</th>
+              <th>Name</th>
+              <th>Age</th>
+            </tr>
+            {% for i in people %}
+            <tr>
+              <td>{{forloop.counter}}</td>
+              <td>{{people.name}}</td>
+              <td>{{people.age}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+    </main>      
+    <script>
+        console.log('Hello Django!')
+    </script>
+</body>
+</html>

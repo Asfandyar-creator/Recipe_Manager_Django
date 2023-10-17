@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block start %}
+
+
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card shadow-lg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1><i>Register Yourself</i></h1>
+            <hr>
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="mb-3">
+                <label for="firstname1" class="form-label">First name</label>
+                <input type="text" class="form-control" id="exampleInputfirstname1" name="first_name" required> 
+            </div>
+            <div class="mb-3">
+                <label for="lastname1" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="exampleInputlastname1" name="last_name" required> 
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputusername1" class="form-label">Username</label>
+                <input type="text" class="form-control" id="exampleInputEmail1"name="username" required>
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+            </div>
+            <p>Already have an account?<a href="/login/">login</a></p>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <br>
+        </form>
+    </div>
+
+
+    {% endblock %}

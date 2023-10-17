@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Update Recipe</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card shadow-lg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2><i>Update Recipe</i></h2>
+            <hr>
+            <div class="form-group">
+                <label for="Recipe xyz"><u>Recipe Name</u></label>
+                <input type="text" value="{{recipe.recipe_name}}" name="recipe_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="abc"><u>Recipe Description</u></label>
+                <textarea name="recipe_description" class="form-control">{{recipe.recipe_description}}</textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="abc.jpg"><u>Recipe Image</u></label>
+                <input name="recipe_image" type="file" class="form-control">
+            </div>
+            <div class="form-group">
+            <button type="submit" class="btn btn-success">Update Recipe</button>
+            </div>
+        </form>
+        <br>
+    </div>
+
+</body>
+</html>
